@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Encrypted Message</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: black;
+        color: #00ffcc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        width: 70%;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 15px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 10px;
+        background: #00ffcc;
+        color: black;
+        cursor: pointer;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 id="title">🔐 Encrypted Message</h1>
+    <p id="hint">Only one person can unlock this...</p>
+
+    <input id="answer" placeholder="Enter answer..." />
+    <br>
+    <button onclick="check()">Unlock</button>
+</div>
+
+<script>
+function check() {
+    let input = document.getElementById("answer").value.toLowerCase();
+
+    // CHANGE THIS ANSWER
+    if(input === "your name here") {
+        document.body.innerHTML = `
+            <div style="text-align:center; color:white;">
+                <h1>Hey...</h1>
+                <p>I guess you figured it out.</p>
+                <p>This was always meant for you.</p>
+                <h2>I like you ❤️</h2>
+                <p>More than just a friend.</p>
+            </div>
+        `;
+    } else {
+        alert("Hmm... that's not it 😅");
+    }
+}
+</script>
+
+</body>
+</html>
